@@ -1,0 +1,22 @@
+version: "2.0"
+
+stories:
+
+## bot challenge
+- story: bot_challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: get_diagnosis
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: describe_symptoms
+    entities:
+      - symptoms: cough
+  - action: action_diagnose_symptoms
+  - intent: gratitude
+  - action : utter_no_problem
+  - intent: goodbye
+  - action: utter_goodbye
